@@ -1,13 +1,18 @@
 use quote::quote;
+use syn::DeriveInput;
 
-pub fn generate_to_hashset() -> proc_macro2::TokenStream {
+use crate::helpers::get_struct_name::get_struct_name;
+
+pub fn generate_to_hashset(input: &DeriveInput) -> proc_macro2::TokenStream {
+    let struct_name = get_struct_name(input);
+
     quote! {
-        use std::collections::HashSet;
-
-        pub fn to_hashset(self) -> HashSet<Self> {
-            let mut set = HashSet::new();
-            set.insert(self);
-            set
+        impl #struct_name {
+            pub fn to_hashset(self) ->  std::collections::HashSet<Self> {
+                let mut set =  std::collections::HashSet::new();
+                set.insert(self);
+                set
+            }
         }
     }
 }

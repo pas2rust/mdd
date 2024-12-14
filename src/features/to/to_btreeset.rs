@@ -1,18 +1,18 @@
 use quote::quote;
-use syn::Attribute;
+use syn::DeriveInput;
 
-use crate::features::to::get_to::{get_to, To};
+use crate::helpers::get_struct_name::get_struct_name;
 
-pub fn generate_to_btreeset(attributes: Vec<Attribute>) -> proc_macro2::TokenStream {
-    let To { key } = get_to(attributes);
+pub fn generate_to_btreeset(input: &DeriveInput) -> proc_macro2::TokenStream {
+    let struct_name = get_struct_name(input);
 
     quote! {
-        use std::collections::BTreeSet;
-
-        pub fn to_btreeset(self) -> BTreeSet<Self> {
-            let mut set = BTreeSet::new();
-            set.insert(self);
-            set
+        impl #struct_name {
+            pub fn to_btreeset(self) -> std::collections::BTreeSet<Self> {
+                let mut set = std::collections::BTreeSet::new();
+                set.insert(self);
+                set
+            }
         }
     }
 }

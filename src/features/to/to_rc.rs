@@ -1,10 +1,17 @@
 use proc_macro2::TokenStream;
 use quote::quote;
+use syn::DeriveInput;
 
-pub fn generate_to_rc() -> TokenStream {
+use crate::helpers::get_struct_name::get_struct_name;
+
+pub fn generate_to_rc(input: &DeriveInput) -> TokenStream {
+    let struct_name = get_struct_name(input);
+
     quote! {
-        pub fn to_rc(self) -> std::rc::Rc<Self> {
-            std::rc::Rc::new(self)
+        impl #struct_name {
+            pub fn to_rc(self) -> std::rc::Rc<Self> {
+                std::rc::Rc::new(self)
+            }
         }
     }
 }

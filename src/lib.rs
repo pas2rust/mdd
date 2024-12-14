@@ -138,9 +138,9 @@ pub fn actix(input: TokenStream) -> TokenStream {
 pub fn to(input: TokenStream) -> TokenStream {
     use features::to::{
         to_arc::generate_to_arc, to_arc_mutex::generate_to_arc_mutex, to_box::generate_to_box,
-        to_hashmap::generate_to_hashmap, to_mutex::generate_to_mutex, to_rc::generate_to_rc,
-        to_rc_weak::generate_to_rc_weak, to_ref_cell::generate_to_ref_cell,
-        to_vec::generate_to_vec,
+        to_btreemap::generate_to_btreemap, to_hashmap::generate_to_hashmap,
+        to_mutex::generate_to_mutex, to_rc::generate_to_rc, to_rc_weak::generate_to_rc_weak,
+        to_ref_cell::generate_to_ref_cell, to_vec::generate_to_vec,
     };
     let input = parse_macro_input!(input as DeriveInput);
     let attributes = input.attrs.clone();
@@ -148,16 +148,16 @@ pub fn to(input: TokenStream) -> TokenStream {
     for_extend_token_stream(
         &mut expanded,
         vec![
-            generate_to_arc().into(),
-            generate_to_rc().into(),
-            generate_to_arc_mutex().into(),
-            generate_to_box().into(),
-            generate_to_mutex().into(),
-            generate_to_rc_weak().into(),
-            generate_to_mutex().into(),
-            generate_to_ref_cell().into(),
-            generate_to_vec().into(),
-            generate_to_hashmap(attributes).into(),
+            generate_to_arc(&input).into(),
+            generate_to_rc(&input).into(),
+            generate_to_arc_mutex(&input).into(),
+            generate_to_box(&input).into(),
+            generate_to_mutex(&input).into(),
+            generate_to_btreemap(&input, attributes.clone()).into(),
+            generate_to_rc_weak(&input).into(),
+            generate_to_ref_cell(&input).into(),
+            generate_to_vec(&input).into(),
+            generate_to_hashmap(&input, attributes).into(),
         ],
     );
     expanded.into()

@@ -1,19 +1,26 @@
 use quote::quote;
-use syn::Attribute;
+use syn::{Attribute, DeriveInput};
 
-use crate::features::to::get_to::{get_to, To};
+use crate::{
+    features::to::get_to::{get_to, To},
+    helpers::get_struct_name::get_struct_name,
+};
 
-pub fn generate_to_hashmap(attributes: Vec<Attribute>) -> proc_macro2::TokenStream {
+pub fn generate_to_hashmap(
+    input: &DeriveInput,
+    attributes: Vec<Attribute>,
+) -> proc_macro2::TokenStream {
     let To { key } = get_to(attributes);
+    let struct_name = get_struct_name(input);
 
     quote! {
-        use std::collections::HashMap;
-
-        pub fn to_hashmap(self) -> HashMap<String, Self> {
-            let mut map = HashMap::new();
-            let key = self.#key;
-            map.insert(key, self);
-            map
+        impl #struct_name {
+            pub fn to_hashmap(self) -> std::collections::HashMap<String, Self> {
+                let mut map = std::collections::HashMap::new();
+                let key = self.#key.to_string();
+                map.insert(key, self);
+                map
+            }
         }
     }
 }
