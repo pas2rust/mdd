@@ -2,6 +2,17 @@
 name = "mdd"
 version = "0.1.0"
 edition = "2021"
+description = "MDD"
+authors = ["pas2rust"]
+homepage = "https://github.com/pas2rust/mdd"
+repository = "https://github.com/pas2rust/mdd"
+license = "MIT"
+exclude = [
+    "tests/*",
+    "tests",
+    "main.rs"
+]
+keywords = ["mdd"]
 
 [package.metadata.scripts]
 dev = "cargo fmt && cargo clippy && cargo run"
