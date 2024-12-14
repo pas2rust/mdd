@@ -3,4 +3,11 @@ name = "mdd"
 version = "0.1.0"
 edition = "2021"
 
+[package.metadata.scripts]
+dev = "cargo fmt && cargo clippy && cargo run"
+test = "cargo fmt && cargo clippy && cargo test --all-features"
+deploy = "cargo fmt && cargo clippy && cargo package && cargo publish"
+clean = "cargo clean && rm -rf target && rm -rf dist && rm tailwind.css && rm -rf node_modules"
+gui = "cargo fmt && cargo clippy && tailwindcss -i ./styles/main.css -o ./tailwind.css && trunk serve --open"
+
 [dependencies]
