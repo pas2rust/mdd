@@ -1,12 +1,11 @@
 [package]
-name = "mdd"
+name = "pas2rust"
 version = "0.1.0"
 edition = "2021"
-description = "MDD"
-authors = ["pas2rust"]
-homepage = "https://github.com/pas2rust/mdd"
-repository = "https://github.com/pas2rust/mdd"
-keywords = ["mdd"]
+description = ""
+authors = [""]
+homepage = ""
+repository = ""
 license = "MIT"
 exclude = [
     "migrations/*",
@@ -16,7 +15,7 @@ exclude = [
     "diesel.toml",
     "main.rs"
 ]
-
+keywords = [""]
 [package.metadata.scripts]
 dev = "cargo fmt && cargo clippy && cargo run"
 test = "cargo fmt && cargo clippy && cargo test --all-features"
@@ -50,7 +49,7 @@ toml = {version = "0.8.19", optional = true }
 uuid = {version = "1.11.0", features=["v4"]}
 
 [lib]
-name = "mdd"
+name = "pas2rust"
 proc-macro = true
 path = "src/lib.rs"
 
