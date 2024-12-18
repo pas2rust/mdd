@@ -6,7 +6,7 @@ description = "MDD"
 authors = ["pas2rust"]
 homepage = "https://github.com/pas2rust/mdd"
 repository = "https://github.com/pas2rust/mdd"
-keywords = ["mdd"]
+keywords = ["mvp", "mdd", "web", "server"]
 license = "MIT"
 exclude = [
     "migrations/*",

@@ -9,5 +9,4 @@ pub mod math;
 pub mod observer;
 pub mod setters;
 pub mod to;
-pub mod tokio;
 pub mod toml;

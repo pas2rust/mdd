@@ -9,8 +9,8 @@ pub fn generate_to_arc_tokio_mutex(input: &DeriveInput) -> TokenStream {
 
     quote! {
         impl #struct_name {
-            pub fn to_arc_tokio_mutex(self) -> std::sync::Arc<std::sync::Mutex<Self>> {
-                std::sync::Arc::new(tokio::Mutex::new(self))
+            pub fn to_arc_tokio_mutex(self) -> std::sync::Arc<tokio::sync::Mutex<Self>> {
+                std::sync::Arc::new(tokio::sync::Mutex::new(self))
             }
         }
     }

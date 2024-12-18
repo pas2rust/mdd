@@ -12,5 +12,7 @@ pub mod to_mutex;
 pub mod to_rc;
 pub mod to_rc_weak;
 pub mod to_ref_cell;
+pub mod to_tuple;
 pub mod to_vec;
 pub mod to_vec_tuples;
+pub mod tokio;

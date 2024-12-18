@@ -8,7 +8,7 @@ use crate::{
 
 pub fn generate_to_linked_hashmap(
     input: &DeriveInput,
-    attributes: Vec<Attribute>,
+    attributes: &Vec<Attribute>,
 ) -> proc_macro2::TokenStream {
     let To { key } = get_to(attributes);
     let struct_name = get_struct_name(input);

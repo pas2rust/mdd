@@ -6,7 +6,7 @@ pub struct To {
     pub key: Ident,
 }
 
-pub fn get_to(attributes: Vec<Attribute>) -> To {
+pub fn get_to(attributes: &Vec<Attribute>) -> To {
     let mut key: Ident = Ident::new("id", Span::call_site());
 
     for attr in attributes {

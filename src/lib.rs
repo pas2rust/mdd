@@ -88,10 +88,7 @@ pub fn builder(input: TokenStream) -> TokenStream {
 }
 
 #[cfg(feature = "json")]
-#[proc_macro_derive(
-    Json
-    //attributes(transporter)
-)]
+#[proc_macro_derive(Json)]
 pub fn json(input: TokenStream) -> TokenStream {
     use features::json::{from_json::generate_from_json, to_json::generate_to_json};
 
@@ -138,9 +135,13 @@ pub fn actix(input: TokenStream) -> TokenStream {
 pub fn to(input: TokenStream) -> TokenStream {
     use features::to::{
         to_arc::generate_to_arc, to_arc_mutex::generate_to_arc_mutex, to_box::generate_to_box,
-        to_btreemap::generate_to_btreemap, to_hashmap::generate_to_hashmap,
+        to_btreemap::generate_to_btreemap, to_cow::generate_to_cow,
+        to_hashmap::generate_to_hashmap, to_hashset::generate_to_hashset,
         to_mutex::generate_to_mutex, to_rc::generate_to_rc, to_rc_weak::generate_to_rc_weak,
-        to_ref_cell::generate_to_ref_cell, to_vec::generate_to_vec,
+        to_ref_cell::generate_to_ref_cell, to_tuple::generate_to_tuple, to_vec::generate_to_vec,
+        to_vec_tuples::generate_to_vec_tuples,
+        tokio::to_arc_tokio_mutex::generate_to_arc_tokio_mutex,
+        tokio::to_mutex::generate_to_tokio_mutex,
     };
     let input = parse_macro_input!(input as DeriveInput);
     let attributes = input.attrs.clone();
@@ -153,11 +154,17 @@ pub fn to(input: TokenStream) -> TokenStream {
             generate_to_arc_mutex(&input).into(),
             generate_to_box(&input).into(),
             generate_to_mutex(&input).into(),
-            generate_to_btreemap(&input, attributes.clone()).into(),
+            generate_to_hashset(&input).into(),
+            generate_to_cow(&input).into(),
+            generate_to_tokio_mutex(&input).into(),
+            generate_to_arc_tokio_mutex(&input).into(),
+            generate_to_vec_tuples(&input, &attributes).into(),
+            generate_to_btreemap(&input, &attributes).into(),
             generate_to_rc_weak(&input).into(),
+            generate_to_tuple(&input).into(),
             generate_to_ref_cell(&input).into(),
             generate_to_vec(&input).into(),
-            generate_to_hashmap(&input, attributes).into(),
+            generate_to_hashmap(&input, &attributes).into(),
         ],
     );
     expanded.into()

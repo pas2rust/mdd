@@ -8,7 +8,7 @@ use crate::{
 
 pub fn generate_to_vec_tuples(
     input: &DeriveInput,
-    attributes: Vec<Attribute>,
+    attributes: &Vec<Attribute>,
 ) -> proc_macro2::TokenStream {
     let To { key } = get_to(attributes);
     let struct_name = get_struct_name(input);
@@ -16,7 +16,7 @@ pub fn generate_to_vec_tuples(
     quote! {
         impl #struct_name {
             pub fn to_vec_of_tuples(self) -> Vec<(String, Self)> {
-                let key = &self.#key.to_string();
+                let key = self.#key.to_string();
                 vec![(key, self)]
             }
         }

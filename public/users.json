@@ -1,113 +1,29 @@
 [
   {
     "age": 19,
-    "email": "johndoe@example.com",
-    "id": "123e4567-e89b-12d3-a456-426614174097",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "d0eb8e87-04f9-46b9-bef7-11fc96734724",
+    "email": "JohnDoe@gmail.com",
     "id": "3f8c9a1c-7d6a-4b2d-99f7-8dbd5402b6f1",
     "name": "John Doe",
     "password": "password123"
   },
   {
     "age": 19,
-    "email": "d70c2e75-2683-47fe-aa4c-1f71925b6a03",
-    "id": "e98bc609-a942-4f5c-9adf-a09dbb17aa37",
+    "email": "1bbd2638-e5fc-4175-8be1-d2fa958e20e7",
+    "id": "995d8188-6f54-4486-aa30-60b207805519",
     "name": "John Doe",
     "password": "password123"
   },
   {
     "age": 19,
-    "email": "4e01c047-5e85-4b89-bfb2-66c99c9070c0",
-    "id": "f88e3a65-5375-4d52-b19d-1589099fc5c5",
+    "email": "0233aca3-00b8-43f3-8142-56ef2e44a27f",
+    "id": "9258ee26-c72e-4b1b-898b-0698e625a2e1",
     "name": "John Doe",
     "password": "password123"
   },
   {
     "age": 19,
-    "email": "JohnDoe@gmail.com",
-    "id": "3bcbd6c0-8587-4cb4-8063-4fa574fce2e0",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "24e16a96-e338-489e-82fd-206ac3957b0f",
-    "id": "d1396ae2-d039-4d57-9d86-cf3f76c6d777",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "07b3c6f9-3d1c-4b03-8e3e-ae8a72a49df9",
-    "id": "85cc12de-ee11-423f-a6a3-b51cc1ee8aa6",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "38d0f0a0-f75b-4c77-8fc6-2b3e606410aa",
-    "id": "0da17e64-5918-4be9-832b-1cc214f63c39",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "25489ede-9621-4ed0-8815-3f21d4d0899f",
-    "id": "30a81271-0298-481b-b9ca-9d639aa6153d",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "7eefa77e-c0c1-481d-99ce-0cceb3b89f0d",
-    "id": "74c7a282-c63a-43b2-9cda-fe5a28e186fc",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "5396232c-efd1-4963-80f8-9e5c2e67a61d",
-    "id": "187a18e2-01f9-4f43-a375-eac83e7ad09e",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "6a15b089-9bec-40b8-8558-c6f4568e8209",
-    "id": "56241e40-687d-432f-ac2c-7a7fc792200a",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "d7d83a27-90f1-483c-8837-1182aa201390",
-    "id": "0d904e14-7a9c-4418-9710-fd71cbf984b4",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "13b6be89-eff3-4dba-8ed1-2a400aae8ae6",
-    "id": "5270922c-d88a-45c4-8391-c5f526cd6e8b",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "6e14806c-4902-4708-bd53-6e77f7742068",
-    "id": "76edfc8c-f267-4a21-8dd7-458832c98b10",
-    "name": "John Doe",
-    "password": "password123"
-  },
-  {
-    "age": 19,
-    "email": "08ac6c6b-23df-49e8-9ef4-119eb3ae9173",
-    "id": "675b1131-b5f6-4ab6-80f1-766409bf447d",
+    "email": "b8f8f6c9-441d-4c4b-98bf-0cdc2fab0723",
+    "id": "14c1b496-694c-4d66-bfd0-a6e5f84b3211",
     "name": "John Doe",
     "password": "password123"
   }
